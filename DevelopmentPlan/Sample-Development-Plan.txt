@@ -1,0 +1,30 @@
+Frobotics 2023 Robot Control Code Development Plan
+
+
+System		Module Suffix	Item / Data
+-------		-------------	-------------------------------------------------
+
+
+Drive		Open		Function
+					Open all sensors and actuators.  Initialize these.  Create device reference.
+				Inputs
+					Error in
+				Outputs
+					Error out
+				Status (one of Nothing, Created Template, WIP (code Work In Progress), Done, Tested.
+					Nothing
+				Notes:
+					None
+
+Drive		Pack_Save_Ref	Function
+					Pack and save all device references.
+				Inputs
+					multiple inputs for device references (refine when known)
+					Error in
+				Outputs
+					Error out
+				Status (one of Nothing, Created Template, WIP (code Work In Progress), Done, Tested.
+					Nothing
+				Notes:
+					None
+
