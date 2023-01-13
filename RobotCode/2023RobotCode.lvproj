@@ -96,12 +96,18 @@ AddOutputFilter chunkFilter
 		<Property Name="target.WebServer.ViAccess" Type="Str">+*</Property>
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
-		<Item Name="Actions" Type="Folder"/>
-		<Item Name="Arm" Type="Folder"/>
+		<Item Name="Actions" Type="Folder" URL="../Actions">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
+		<Item Name="Arm" Type="Folder" URL="../Arm">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="Autonomous" Type="Folder" URL="../Autonomous">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="Claw" Type="Folder"/>
+		<Item Name="Claw" Type="Folder" URL="../Claw">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="Drive" Type="Folder" URL="../Drive">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
@@ -111,7 +117,9 @@ AddOutputFilter chunkFilter
 		<Item Name="Human" Type="Folder" URL="../Human">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="Intake" Type="Folder"/>
+		<Item Name="Intake" Type="Folder" URL="../Intake">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="Support Code" Type="Folder">
 			<Item Name="Elapsed Times.vi" Type="VI" URL="../Elapsed Times.vi"/>
 		</Item>
