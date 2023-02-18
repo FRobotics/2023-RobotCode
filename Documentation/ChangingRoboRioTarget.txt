@@ -1,0 +1,8 @@
+Do this after uplaoding any code into a RoboRio 2. 
+
+- Go into the robot code folder.
+- Right Click on the project file.
+- Open with Notepad
+- Find the line that say crio.controllerPID 
+- Change the number that says "7AAE" to "76F2"
+- Save the file
