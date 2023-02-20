@@ -1,0 +1,22 @@
+arm tuning
+
+	- lift
+		kp -- increase to approx 1/10.
+		decrease pos tolerance to 1
+
+	- extend
+		can probably decrease error db to 0.2
+		decrease error threshold to say 6
+		increase max motor output to 0.65 to 0.75
+		
+
+	- rotate
+		increase error deadband to 0.5 (or maybe 1.0)
+		see how it responds..... FIRST
+		maybe decrease err threshold to 10
+		maybe increase max output to 0.4
+
+
+
+
+		 
