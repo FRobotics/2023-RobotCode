@@ -14,10 +14,9 @@
 		<Item Name="Arm" Type="Folder" URL="../../RobotCode/Arm">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="arm-execute-sim.vi" Type="VI" URL="../arm-execute-sim.vi"/>
-		<Item Name="arm-lift-bang-bang-control.vi" Type="VI" URL="../arm-lift-bang-bang-control.vi"/>
-		<Item Name="arm-lift-PID-control.vi" Type="VI" URL="../arm-lift-PID-control.vi"/>
-		<Item Name="arm-sim-globals.vi" Type="VI" URL="../arm-sim-globals.vi"/>
+		<Item Name="arm-sim-subvi" Type="Folder" URL="../arm-sim-subvi">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="arm-sim-main.vi" Type="VI" URL="../arm-sim-main.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="instr.lib" Type="Folder">
