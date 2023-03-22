@@ -25,6 +25,8 @@
 			<Item Name="Playback Controls.vi" Type="VI" URL="../Playback Controls.vi"/>
 			<Item Name="Prepare Joystick Data for Displays.vi" Type="VI" URL="../Prepare Joystick Data for Displays.vi"/>
 			<Item Name="Adjust Dashboard Window_NO_RESIZE.vi" Type="VI" URL="../Adjust Dashboard Window_NO_RESIZE.vi"/>
+			<Item Name="ArmGamePiecePreset.ctl" Type="VI" URL="../ArmGamePiecePreset.ctl"/>
+			<Item Name="ArmPositionPreset.ctl" Type="VI" URL="../ArmPositionPreset.ctl"/>
 		</Item>
 		<Item Name="Dashboard Main_1280_768.vi" Type="VI" URL="../Dashboard Main_1280_768.vi"/>
 		<Item Name="Dashboard Main_ORIGINAL.vi" Type="VI" URL="../Dashboard Main_ORIGINAL.vi"/>
@@ -263,7 +265,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{F12754D6-B5E0-496F-B50C-3EDB6F368199}</Property>
-				<Property Name="Bld_version.build" Type="Int">19</Property>
+				<Property Name="Bld_version.build" Type="Int">21</Property>
 				<Property Name="Bld_version.major" Type="Int">17</Property>
 				<Property Name="Bld_version.patch" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Dashboard.exe</Property>
