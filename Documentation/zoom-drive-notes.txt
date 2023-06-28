@@ -1,0 +1,88 @@
+Things to do:
+   - Drive System
+	1) General cleanup 
+	-------------------
+	- Suggest renaming getSwerveDriveKine to DriveGetSwerveKinematics
+			- fix execution params.
+			- create icon.
+	- fix drive autotune Right dash names.  (It used left for the right...)
+	- driveGetDevicereference --- Remove unused motors and encoders....
+			The only thing left here is the gyro...
+			Right now this causes an error once when it first executes.
+			The error can be ignored...
+	- driveExecute -- cleanup and add comments.  (This is just making things more readable.  
+				no code changes.)
+	- driveNetwork -- add write rotational demand from "get speed demand" 
+	- driveSetKine	-- fix execution params.
+
+	2) Revise for reading the encoder values.  This is mostly scaling and offset.
+	-------------------
+	- driveModuleOpen -- changes for encoder scaling.
+				-- add initial spin position from testing.
+				-- set spin spark max conversion sensor conv
+				-- set travel spark max sensor conversion (for dist and speed)
+				-- set cancoder initial position offset.
+	- driveReadEncoder -- change conv constant to 1.  It is now in the open.
+			 	-- on first execute remember the difference between
+					spark max pos and cancoder position.  Use
+					this difference to match spark max to
+					absolute.
+				-- calc average (maybe weighted) of two sensors (future)
+				-- form into module position, and module state, and output
+	- driveExecute
+				-- create array of Module States
+					use "build array"
+					then write to new global (easiest to create indicator.  
+					then copy this to global and set global.
+				-- create array of module positions.  
+					use "build array"
+					then write to new global(easiest to create indicator.  
+					then copy this to global and set global.
+
+	3) Control Spin Position and Travel speed
+	------------------------------------------
+	- create DriveModuleControl from DriveReadEncoder.
+		- Remove actual read of encoder values.
+		- Input to this should be:
+			- Module State Dmd (from kinematics)
+			- Module State Pos (from encoder read)
+			- boolean indicating that all modules are within tolerance.
+				(for now ignore where this comes from.)
+		- Outputs:
+			- Module state position within tolerance boolean.
+	- "optimize" the module state demand.  This way the module will never have to rotate more than 179.99 deg.
+	- extract the specific module-state->angle->value data from the moduleState cluster (unbundle by name)
+	- extract the specific module-state-dmd->angle->value data from the moduleState cluster. (unbundle by name)
+	- calculate "modulus" error.  because the spin is continous a straight subtraction doesn't always work.
+		This modulus routine takes care of the wrap around.
+	- then use position control to calculate desired motor output.
+	- output to the motor
+	- suggest writing error value and motor output to network tables.  
+
+	4) Enhance DriveModuleControl to drive travel motors
+	----------------------------------------------------
+	- future comment....
+
+
+	99) Future nice things....
+	- suggest lighter backgrounds 255, 160, 160  (not important -- old people like contrast...)
+	- driveGetDistance -- obsolete. -- find callers and fix. (future)
+	- driveGetSpeed -- obsolete -- find callers and fix. (future)
+	- driveMaxSpeed -- update value for swerve drive after testing!!
+				for now it is 11.
+	- create DriveGetModuleReference.
+			Copy DriveGetREference. 
+			it would start with code we already have..  (Maybe future)
+	- driveModuleOpen  -- change prefix from string to number.
+
+
+	- driveExecute 		-- create DriveSetGyroCalibrated
+				-- create DriveSetGyro
+
+
+	- driveModControl	-- create......
+
+		
+
+	
+	
