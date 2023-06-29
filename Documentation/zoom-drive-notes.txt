@@ -2,18 +2,18 @@ Things to do:
    - Drive System
 	1) General cleanup 
 	-------------------
-	- Suggest renaming getSwerveDriveKine to DriveGetSwerveKinematics
-			- fix execution params.
-			- create icon.
-	- fix drive autotune Right dash names.  (It used left for the right...)
-	- driveGetDevicereference --- Remove unused motors and encoders....
+	X Suggest renaming getSwerveDriveKine to DriveGetSwerveKinematics
+			X fix execution params.
+			X create icon.
+	X fix drive autotune Right dash names.  (It used left for the right...)
+	X driveGetDevicereference --- Remove unused motors and encoders....
 			The only thing left here is the gyro...
 			Right now this causes an error once when it first executes.
 			The error can be ignored...
-	- driveExecute -- cleanup and add comments.  (This is just making things more readable.  
+	X driveExecute -- cleanup and add comments.  (This is just making things more readable.  
 				no code changes.)
-	- driveNetwork -- add write rotational demand from "get speed demand" 
-	- driveSetKine	-- fix execution params.
+	X driveNetwork -- add write rotational demand from "get speed demand" 
+	X driveSetKine	-- fix execution params.
 
 	2) Revise for reading the encoder values.  This is mostly scaling and offset.
 	-------------------
