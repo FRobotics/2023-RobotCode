@@ -1,0 +1,155 @@
+Suggested changed to Zoom Drive control system code
+
+------------------------------------
+- Get trajectory following working.
+------------------------------------
+	A) The trajectory following routines need some state, and
+	positions data from the drive system.
+
+	- DriveExecute
+		- make array of ModuleStates
+		- make array of ModulePositions
+		- create indicators for both of these.
+
+	- DriveGlobals
+		- copy DriveExecute ModulePositons and ModuleStates
+			indicators into DriveGlobals save
+
+	- DriveGetModulePositions 
+		- create  -- reads global
+	
+	- DriveGetModuleStates 
+		- create -- reads globals
+
+	- DriveExecute 
+		- write module states and positions to globals.
+		remove module states and module positions indicators
+
+	B) The vision system calculates the robots absolute position
+	on the field.  This needs to be changed to use the Swerve Drive
+	Pose Estimator 2 instead of the Differential Drive Pose Estimator
+
+	- VisionExecute
+		- replace diff drive pose est with swerve drive pose est 2
+		( the menu item needs to be fixed for this to insert 
+		the contents of the macro...)  Menu item under Kine/Odom.
+
+	C) Follow Trajectory common (used by absolute and relative )
+
+	- actFollowTrajectoryCommon 
+		- Create from actFollowTrajectoryAbsolute.
+		- inputs: 
+			- robot pose (comes from odometry)
+			- trajectory
+			- first time boolean
+		- outputs
+			- vX
+			- vY
+			- vAngular
+			- done
+		- replace Ramsete control with Holonomic Execute Trajectory
+
+	D) Follow absolute trajectory
+
+	- actFollowAbsoluteTrajectory
+		- replace ramsete control with actFollowTrajectoryCommon
+
+	E) Follow relative trajectory
+
+	- actFollowTrajectory
+		- rename to actFollowRelativeTrajectory
+			(it might be easier to delete and copy
+			 actFollowAbsoluteTrajectory)
+		- replace ramsete control with actFollowTrajectoryCommon
+		- implement swerve drive odometry update.
+		- implement swerve drive odometry new (when firstTime is true)
+			otherwise pass current odometry back through feedback
+			node. )
+
+	F) Update auto routine to follow trajectory.
+
+	- AutoFollowTrajectory
+		- rename to AutoFollowRelativeTrajectory
+		- update for swerve demand
+
+	- AutoFollowAbsoluteTrajectory
+		- create from AutoFollowRelativeTrajectory.
+		- use actfollowrelativeTrajectory.
+
+	G) Revise Act Make Trajecotry routine for swerve drive
+		(Note that this makes absolute trajectories.
+		However -- a trajectory that starts at 0,0,0 is
+		also a relative trajectory.)
+
+	- ActMakeTrajectory
+		- remove diff drive kine constraint, replace with
+		swerve drive kine constraint
+	
+	H) Create an Auto routine to test relative trajectory following.
+
+	- Auto_Routine_TestTrajectory.
+		- create from some other auto routine
+		- create a simple trajectory
+		- execute it.
+
+	- Autonomous Independent
+		- add Auto_Routine_TestTrajectory
+
+	- Begin
+		- add new auto routine to list.
+
+------------------------------------
+- Test and revise
+------------------------------------
+	
+FUTURE THINGS.....
+
+------------------------------------
+- ZEKEs idea to implement avoid routine
+------------------------------------
+	- define what is wanted.
+	- write code to execute it.
+	- update human execute to call new routine.
+
+------------------------------------
+- Revise module spin control to use both encoders
+------------------------------------
+
+	- drive module read -- first time calc offset.
+			- apply offset to other encoder
+			- calc encoder difference and report.
+
+	- drive module control
+			- use average of both encoders.
+			- make deadband smaller.
+
+------------------------------------
+- Revise read and control code to move network table writes to globals then
+	to separate network module.
+------------------------------------
+
+
+
+updated files
+
+	Drive
+	- driveGlobal - add module states, module positions
+	- driveExecute - write module states, positions
+	- driveGetModulePositions - new
+	- driveGetModuleStates - new
+
+	vision
+	- VisionExecute
+
+	act
+	- actMakeTrajectory
+	- actFollowAbsoluteTrajectory
+	- actFollowRelativeTrajectory (renamed)
+	- actFollowTrajectoryCommon
+
+	auto
+	- autoBegin - move auto list into this routine
+	- Auto_Routine_TestTrajectory - create and test 
+		separate trajectory
+	- AutoFollowAbsoluteTrajectory
+	- AutoFollowRelativeTrajectory
