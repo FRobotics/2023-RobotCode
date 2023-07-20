@@ -6,22 +6,22 @@ Suggested changed to Zoom Drive control system code
 	A) The trajectory following routines need some state, and
 	positions data from the drive system.
 
-	- DriveExecute
+	X DriveExecute
 		- make array of ModuleStates
 		- make array of ModulePositions
 		- create indicators for both of these.
 
-	- DriveGlobals
+	X DriveGlobals
 		- copy DriveExecute ModulePositons and ModuleStates
 			indicators into DriveGlobals save
 
-	- DriveGetModulePositions 
+	X DriveGetModulePositions 
 		- create  -- reads global
 	
-	- DriveGetModuleStates 
+	X DriveGetModuleStates 
 		- create -- reads globals
 
-	- DriveExecute 
+	X DriveExecute 
 		- write module states and positions to globals.
 		remove module states and module positions indicators
 
@@ -29,7 +29,7 @@ Suggested changed to Zoom Drive control system code
 	on the field.  This needs to be changed to use the Swerve Drive
 	Pose Estimator 2 instead of the Differential Drive Pose Estimator
 
-	- VisionExecute
+	X VisionExecute
 		- replace diff drive pose est with swerve drive pose est 2
 		( the menu item needs to be fixed for this to insert 
 		the contents of the macro...)  Menu item under Kine/Odom.
