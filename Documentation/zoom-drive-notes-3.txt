@@ -36,7 +36,7 @@ Suggested changed to Zoom Drive control system code
 
 	C) Follow Trajectory common (used by absolute and relative )
 
-	- actFollowTrajectoryCommon 
+	X actFollowTrajectoryCommon 
 		- Create from actFollowTrajectoryAbsolute.
 		- inputs: 
 			- robot pose (comes from odometry)
@@ -51,12 +51,12 @@ Suggested changed to Zoom Drive control system code
 
 	D) Follow absolute trajectory
 
-	- actFollowAbsoluteTrajectory
+	X actFollowAbsoluteTrajectory
 		- replace ramsete control with actFollowTrajectoryCommon
 
 	E) Follow relative trajectory
 
-	- actFollowTrajectory
+	X actFollowTrajectory
 		- rename to actFollowRelativeTrajectory
 			(it might be easier to delete and copy
 			 actFollowAbsoluteTrajectory)
@@ -71,10 +71,12 @@ Suggested changed to Zoom Drive control system code
 	- AutoFollowTrajectory
 		- rename to AutoFollowRelativeTrajectory
 		- update for swerve demand
+		(estimated change time 5 minutes)
 
 	- AutoFollowAbsoluteTrajectory
 		- create from AutoFollowRelativeTrajectory.
 		- use actfollowrelativeTrajectory.
+		(estimated change time 5 minutes)
 
 	G) Revise Act Make Trajecotry routine for swerve drive
 		(Note that this makes absolute trajectories.
@@ -84,6 +86,7 @@ Suggested changed to Zoom Drive control system code
 	- ActMakeTrajectory
 		- remove diff drive kine constraint, replace with
 		swerve drive kine constraint
+		(estimated change time 15 minutes)
 	
 	H) Create an Auto routine to test relative trajectory following.
 
@@ -91,12 +94,28 @@ Suggested changed to Zoom Drive control system code
 		- create from some other auto routine
 		- create a simple trajectory
 		- execute it.
+		(estimated change time 10 minutes)
 
 	- Autonomous Independent
 		- add Auto_Routine_TestTrajectory
+		(estimated change time 10 minutes)
 
 	- Begin
 		- add new auto routine to list.
+		(estimated change time 5 minutes)
+
+	I) Make test auto routines for drive straight and turn auto
+
+	- Autonomous Independent
+		- add new auto routine case "TestDriveStraight" to call
+			AutoDriveStraight
+			say go 5 feet at 5 ft/sec with max time of 20 sec
+		- add new auto routine case "TestDriveTurn" to call
+			AutoTurn
+			say 120 deg at 5 ft/sec with max time of 100 sec
+
+	- Begin
+		- add the new auto routines to the list.
 
 ------------------------------------
 - Test and revise
