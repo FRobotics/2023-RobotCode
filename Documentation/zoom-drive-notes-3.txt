@@ -104,7 +104,10 @@ Suggested changed to Zoom Drive control system code
 		- add new auto routine to list.
 		(estimated change time 5 minutes)
 
-	I) Make test auto routines for drive straight and turn auto
+------------------------------------
+- Auto test routines for drive straight and turn
+------------------------------------
+	A) Make test auto routines for drive straight and turn auto
 
 	- Autonomous Independent
 		- add new auto routine case "TestDriveStraight" to call
@@ -116,6 +119,27 @@ Suggested changed to Zoom Drive control system code
 
 	- Begin
 		- add the new auto routines to the list.
+------------------------------------
+- Update arm position and exclusion tuning
+------------------------------------
+	A) Set height tuning
+
+	B) Set min allowed extension as a function of lift angle
+
+	C) Set min allowed lift angle as a function of extension
+
+	D) Review and look at other arm exclusion data...
+
+------------------------------------
+- Update drive travel speed PID
+------------------------------------
+	A) Disable PID when speed demand is zero (or very close to zero.)
+
+	B) Update travel PID tuning
+
+------------------------------------
+- Tune spin control, possibly add feedforward
+------------------------------------
 
 ------------------------------------
 - Test and revise
