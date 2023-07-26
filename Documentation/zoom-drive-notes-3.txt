@@ -68,12 +68,12 @@ Suggested changed to Zoom Drive control system code
 
 	F) Update auto routine to follow trajectory.
 
-	- AutoFollowTrajectory
+	X- AutoFollowTrajectory
 		- rename to AutoFollowRelativeTrajectory
 		- update for swerve demand
 		(estimated change time 5 minutes)
 
-	- AutoFollowAbsoluteTrajectory
+	X- AutoFollowAbsoluteTrajectory
 		- create from AutoFollowRelativeTrajectory.
 		- use actfollowrelativeTrajectory.
 		(estimated change time 5 minutes)
@@ -83,24 +83,24 @@ Suggested changed to Zoom Drive control system code
 		However -- a trajectory that starts at 0,0,0 is
 		also a relative trajectory.)
 
-	- ActMakeTrajectory
+	X- ActMakeTrajectory
 		- remove diff drive kine constraint, replace with
 		swerve drive kine constraint
 		(estimated change time 15 minutes)
 	
 	H) Create an Auto routine to test relative trajectory following.
 
-	- Auto_Routine_TestTrajectory.
+	X- Auto_Routine_TestTrajectory.
 		- create from some other auto routine
 		- create a simple trajectory
 		- execute it.
 		(estimated change time 10 minutes)
 
-	- Autonomous Independent
+	X- Autonomous Independent
 		- add Auto_Routine_TestTrajectory
 		(estimated change time 10 minutes)
 
-	- Begin
+	X- Begin
 		- add new auto routine to list.
 		(estimated change time 5 minutes)
 
