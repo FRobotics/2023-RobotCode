@@ -1,5 +1,152 @@
 Suggested changed to Zoom Drive control system code
 
+======================================================================================
+OPEN ITEMS
+======================================================================================
+
+------------------------------------
+- Update arm position and exclusion tuning
+------------------------------------
+	X A) Set height tuning
+
+	# B) Set min allowed extension as a function of lift angle
+		NOT USED ANYWHERE.
+
+	# C) Set min allowed lift angle as a function of extension
+		NOT USED ANYWHERE
+
+	X D) Review and look at other arm exclusion data...
+
+	E) Test all presets.  (Arm needs to be physically fixed first!!)
+
+------------------------------------
+- Add Drive Travel PID Reset
+------------------------------------
+	A) Reset Drive travel PID when speed demand is zero (or very close to zero.)
+
+	- Look at differential drive execute code -- from the original robot project
+	Copy the logic that detects when the speed demand (setpoint) is 
+	close to zero.  (Use close to zero instead of exactly zero.)  This is sent 
+	to an edge on.  The result is used to reset the PID.  There
+	is a reset input on the PID.
+------------------------------------
+- Test auto drive straight routine
+------------------------------------
+	A) ActDriveStraight and ActDriveStraightWeird calculate the distance error
+	using the same logic.  Make this logic a VI that both call.  This way if
+	the error calculation needs to change the change only is made in one place.
+
+	- create new ActDriveStraightXXXX (or whatever name you give it) routine
+		to calculate drive straight distance error.
+
+	- Add network table writes for target distance, distance 
+	error, and first time.  Watch these while testing 
+ 
+	B) Test auto drive straight and correct as needed.
+
+	- Things to look for:
+		- is the target distance set to the desired travel distance + 
+		current distance?  (If not make certain that FirstTime is being
+		set.)  
+		- are the wheel distances increasing?  (If not then the error
+		logic may (will) have to encorporate the wheel angle when calculating
+		the difference error.) 
+		- is the error decreasing? (Look at error calculation to make certain
+		sign is correct.)
+
+------------------------------------
+- Test auto drive turn routine
+------------------------------------
+	A) Test auto drive turn and correct as needed.
+
+	- Things to look for:
+		- is it going in the correct direction ?
+		- is it going as fast as desired.  (the original uses Ft/Sec.  
+		The new swerve uses DEG/SEC.  Perhaps a constant should be
+		calculated to convert from Ft/SEC to DEG/SEC.  -- NOTE  do
+		this using the circumference at the wheel position. 
+
+------------------------------------
+- Tune Drive travel control
+------------------------------------
+	A) Re-tune travel feedforward -- Ks, Kv
+		(There is a helper version of the Drive Execute to assist with
+		this.)
+		- use the result to calculate Kn
+		- update Drive Execute and test Drive Execute functions with
+		results.
+
+	B) Tune travel feedforward -- Ka
+		(There is a helper version of the Drive Execute to assist with
+		this.)
+		- update Drive Execute and test Drive Execute with results.
+		- test! 		
+
+	B) Update travel PID tuning
+		(There is a helper version of the Drive Execute to assist with
+		this.)
+		- This may have to be done outside..... or someplace where a long
+		staight level run can be made.  It might be possible to test this
+		while the robot is moving in a circle....
+
+------------------------------------
+- Test Auto-Balance
+------------------------------------
+
+------------------------------------
+- Test follow trajectory
+------------------------------------
+
+
+------------------------------------
+- Tune Drive Spin
+------------------------------------
+
+
+
+
+*****************
+FUTURE IDEAS...
+*****************
+NOT IN ANY PARTICULAR ORDER
+
+------------------------------------
+- Add direction angle to drive straight act, and auto routines.
+------------------------------------
+
+------------------------------------
+- Add robot orientation options (follow traj, keep, specific end orientation)
+to follow trajectory.
+------------------------------------
+	
+------------------------------------
+- ZEKEs idea to implement avoid routine
+------------------------------------
+	- define what is wanted.
+	- write code to execute it.
+	- update human execute to call new routine.
+
+------------------------------------
+- Revise module spin control to use both encoders
+------------------------------------
+
+	- drive module read -- first time calc offset.
+			- apply offset to other encoder
+			- calc encoder difference and report.
+
+	- drive module control
+			- use average of both encoders.
+			- make deadband smaller.
+
+------------------------------------
+- Revise drive read and control code to move network table writes to globals then
+	to separate network module.
+------------------------------------
+
+
+=====================================================================================
+COMPLETED ITEMS
+=====================================================================================
 ------------------------------------
 - Get trajectory following working.
 ------------------------------------
@@ -109,7 +256,7 @@ Suggested changed to Zoom Drive control system code
 ------------------------------------
 	A) Make test auto routines for drive straight and turn auto
 
-	- Autonomous Independent
+	X Autonomous Independent
 		- add new auto routine case "TestDriveStraight" to call
 			AutoDriveStraight
 			say go 5 feet at 5 ft/sec with max time of 20 sec
@@ -117,62 +264,12 @@ Suggested changed to Zoom Drive control system code
 			AutoTurn
 			say 120 deg at 5 ft/sec with max time of 100 sec
 
-	- Begin
+	X Begin
 		- add the new auto routines to the list.
-------------------------------------
-- Update arm position and exclusion tuning
-------------------------------------
-	A) Set height tuning
 
-	B) Set min allowed extension as a function of lift angle
-
-	C) Set min allowed lift angle as a function of extension
-
-	D) Review and look at other arm exclusion data...
-
-------------------------------------
-- Update drive travel speed PID
-------------------------------------
-	A) Disable PID when speed demand is zero (or very close to zero.)
-
-	B) Update travel PID tuning
-
-------------------------------------
-- Tune spin control, possibly add feedforward
-------------------------------------
-
-------------------------------------
-- Test and revise
-------------------------------------
-	
-FUTURE THINGS.....
-
-------------------------------------
-- ZEKEs idea to implement avoid routine
-------------------------------------
-	- define what is wanted.
-	- write code to execute it.
-	- update human execute to call new routine.
-
-------------------------------------
-- Revise module spin control to use both encoders
-------------------------------------
-
-	- drive module read -- first time calc offset.
-			- apply offset to other encoder
-			- calc encoder difference and report.
-
-	- drive module control
-			- use average of both encoders.
-			- make deadband smaller.
-
-------------------------------------
-- Revise read and control code to move network table writes to globals then
-	to separate network module.
-------------------------------------
-
-
-
+=====================================================================================
+MISCELLANEOUS INFORMATION
+=====================================================================================
 updated files
 
 	Drive
