@@ -24,7 +24,7 @@ OPEN ITEMS
 ------------------------------------
 	A) Reset Drive travel PID when speed demand is zero (or very close to zero.)
 
-	- Look at differential drive execute code -- from the original robot project
+	X Look at differential drive execute code -- from the original robot project
 	Copy the logic that detects when the speed demand (setpoint) is 
 	close to zero.  (Use close to zero instead of exactly zero.)  This is sent 
 	to an edge on.  The result is used to reset the PID.  There
