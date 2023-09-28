@@ -10,7 +10,7 @@
 </Path>
 <String>
 <Name>Write Config File Comment</Name>
-<Val>Turn Left 90 Deg</Val>
+<Val>Sweve_2_move_1</Val>
 </String>
 <Array>
 <Name>WayPoints</Name>
@@ -20,15 +20,15 @@
 <NumElts>4</NumElts>
 <DBL>
 <Name>X</Name>
-<Val>6.29943710618436</Val>
+<Val>6.52780000000000</Val>
 </DBL>
 <DBL>
 <Name>Y</Name>
-<Val>4.12443653395785</Val>
+<Val>4.67360000000000</Val>
 </DBL>
 <DBL>
 <Name>ANGLE</Name>
-<Val>0.00000000000000</Val>
+<Val>-3.96841926884538E-15</Val>
 </DBL>
 <DBL>
 <Name>WEIGHT</Name>
@@ -40,15 +40,15 @@
 <NumElts>4</NumElts>
 <DBL>
 <Name>X</Name>
-<Val>8.83920000000000</Val>
+<Val>1.80340000000000</Val>
 </DBL>
 <DBL>
 <Name>Y</Name>
-<Val>6.65480000000000</Val>
+<Val>5.08000000000000</Val>
 </DBL>
 <DBL>
 <Name>ANGLE</Name>
-<Val>1.57079632679490</Val>
+<Val>-3.96841926884538E-15</Val>
 </DBL>
 <DBL>
 <Name>WEIGHT</Name>
@@ -61,11 +61,11 @@
 <NumElts>15</NumElts>
 <DBL>
 <Name>MaxVelocity</Name>
-<Val>2.74320000000000</Val>
+<Val>3.04800000000000</Val>
 </DBL>
 <DBL>
 <Name>Max Acceleration</Name>
-<Val>1.90500000000000</Val>
+<Val>6.09600000000000</Val>
 </DBL>
 <DBL>
 <Name>StartVelocity</Name>
@@ -77,33 +77,33 @@
 </DBL>
 <Boolean>
 <Name>Reversed</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>DiffDrKineConstntDefined</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>CentAcellConstntDefined</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>DiffDrVoltConstntDefined</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Cluster>
 <Name>DIFF_DRIVE_KINE_CONSTRAINT</Name>
 <NumElts>3</NumElts>
 <DBL>
 <Name>Max Speed (M/S)</Name>
-<Val>2.74320000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Cluster>
 <Name>DIFF_DRIVE_KINEMATICS</Name>
 <NumElts>1</NumElts>
 <DBL>
 <Name>TrackWidth_Meters</Name>
-<Val>1.06680000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 </Cluster>
 <DBL>
@@ -116,58 +116,278 @@
 <NumElts>1</NumElts>
 <DBL>
 <Name>Max Cent Accel</Name>
-<Val>1.52400000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 </Cluster>
 <Boolean>
 <Name>SwerveDrKineConstntDefined</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Cluster>
 <Name>SWERVE_DRIVE_KINE_CONSTRAINT</Name>
 <NumElts>2</NumElts>
 <DBL>
 <Name>Max Speed (M/S)</Name>
-<Val>0.00000000000000</Val>
+<Val>3.04800000000000</Val>
 </DBL>
 <Cluster>
 <Name>SwerveKinematics</Name>
 <NumElts>6</NumElts>
 <I32>
 <Name>NumModules</Name>
-<Val>0</Val>
+<Val>4</Val>
 </I32>
 <Array>
 <Name>InverseKinematics</Name>
-<Dimsize>0</Dimsize>
-<Dimsize>0</Dimsize>
+<Dimsize>8</Dimsize>
+<Dimsize>3</Dimsize>
 <DBL>
 <Name>Real Matrix Element</Name>
-<Val></Val>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.33020000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.40640000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>-0.33020000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.40640000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>-0.33020000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>-0.40640000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.33020000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>-0.40640000000000</Val>
 </DBL>
 </Array>
 <Array>
 <Name>ForwardKinematics</Name>
-<Dimsize>0</Dimsize>
-<Dimsize>0</Dimsize>
+<Dimsize>3</Dimsize>
+<Dimsize>8</Dimsize>
 <DBL>
 <Name>Real Matrix Element</Name>
-<Val></Val>
+<Val>0.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>-1.02846042114419E-17</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>-1.02846042114419E-17</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>1.02846042114419E-17</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>1.02846042114419E-17</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.30106530801297</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.37054191755442</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>-0.30106530801297</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.37054191755442</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>-0.30106530801297</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>-0.37054191755442</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>0.30106530801297</Val>
+</DBL>
+<DBL>
+<Name>Real Matrix Element</Name>
+<Val>-0.37054191755442</Val>
 </DBL>
 </Array>
 <Array>
 <Name>Modules</Name>
-<Dimsize>0</Dimsize>
+<Dimsize>4</Dimsize>
 <Cluster>
 <Name>TRANSLATION</Name>
 <NumElts>2</NumElts>
 <DBL>
 <Name>X</Name>
-<Val></Val>
+<Val>0.40640000000000</Val>
 </DBL>
 <DBL>
 <Name>Y</Name>
-<Val></Val>
+<Val>-0.33020000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>TRANSLATION</Name>
+<NumElts>2</NumElts>
+<DBL>
+<Name>X</Name>
+<Val>0.40640000000000</Val>
+</DBL>
+<DBL>
+<Name>Y</Name>
+<Val>0.33020000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>TRANSLATION</Name>
+<NumElts>2</NumElts>
+<DBL>
+<Name>X</Name>
+<Val>-0.40640000000000</Val>
+</DBL>
+<DBL>
+<Name>Y</Name>
+<Val>0.33020000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>TRANSLATION</Name>
+<NumElts>2</NumElts>
+<DBL>
+<Name>X</Name>
+<Val>-0.40640000000000</Val>
+</DBL>
+<DBL>
+<Name>Y</Name>
+<Val>-0.33020000000000</Val>
 </DBL>
 </Cluster>
 </Array>
@@ -185,28 +405,100 @@
 </Cluster>
 <Array>
 <Name>SavedModuleStates</Name>
-<Dimsize>0</Dimsize>
+<Dimsize>4</Dimsize>
 <Cluster>
 <Name>SWERVE_DRIVE_MODULE_STATE</Name>
 <NumElts>2</NumElts>
 <DBL>
 <Name>Speed</Name>
-<Val></Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Cluster>
 <Name>Angle</Name>
 <NumElts>3</NumElts>
 <DBL>
 <Name>VALUE</Name>
-<Val></Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>COS</Name>
-<Val></Val>
+<Val>1.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>SIN</Name>
-<Val></Val>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+</Cluster>
+<Cluster>
+<Name>SWERVE_DRIVE_MODULE_STATE</Name>
+<NumElts>2</NumElts>
+<DBL>
+<Name>Speed</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<Cluster>
+<Name>Angle</Name>
+<NumElts>3</NumElts>
+<DBL>
+<Name>VALUE</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>COS</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>SIN</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+</Cluster>
+<Cluster>
+<Name>SWERVE_DRIVE_MODULE_STATE</Name>
+<NumElts>2</NumElts>
+<DBL>
+<Name>Speed</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<Cluster>
+<Name>Angle</Name>
+<NumElts>3</NumElts>
+<DBL>
+<Name>VALUE</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>COS</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>SIN</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+</Cluster>
+<Cluster>
+<Name>SWERVE_DRIVE_MODULE_STATE</Name>
+<NumElts>2</NumElts>
+<DBL>
+<Name>Speed</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<Cluster>
+<Name>Angle</Name>
+<NumElts>3</NumElts>
+<DBL>
+<Name>VALUE</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>COS</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>SIN</Name>
+<Val>0.00000000000000</Val>
 </DBL>
 </Cluster>
 </Cluster>
@@ -218,14 +510,14 @@
 <NumElts>3</NumElts>
 <DBL>
 <Name>Max Voltage</Name>
-<Val>11.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Cluster>
 <Name>DIFF_DRIVE_KINEMATICS</Name>
 <NumElts>1</NumElts>
 <DBL>
 <Name>TrackWidth_Meters</Name>
-<Val>1.06680000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 </Cluster>
 <Cluster>
@@ -233,19 +525,19 @@
 <NumElts>4</NumElts>
 <DBL>
 <Name>Ks</Name>
-<Val>9.00000000000000E-2</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>Kv</Name>
-<Val>3.50393700787402</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>Ka</Name>
-<Val>0.39370078740157</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>KnInv</Name>
-<Val>1.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 </Cluster>
 </Cluster>
