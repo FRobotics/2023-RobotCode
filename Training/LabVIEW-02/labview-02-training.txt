@@ -1,0 +1,49 @@
+concepts
+
+	X numeric data types
+		integer32 -- whole numbers
+		double ( 64 bit ) -- 
+		- right click on control or indicator select data type.
+		- automatic conversion -- not always your friend.
+
+	X enumerated variables
+		- what are they  (integer values with names)
+		- creating custom data type
+
+
+	X while loop
+		- counter (starts at zero)
+		- terminator
+			- logic, executes last
+
+	X while loop wait
+
+	X remembering data between loops
+
+---------------------------------------------------------------------
+
+	- case statements
+		- layers of conditional execution
+		- terminals out of all have to be assigned.
+		- terminals into don't always have to be used
+		- ? can be boolean or numeric or string
+		- for numeric - enumerated values work best!!
+		
+
+----------------------------------
+
+	- array data type
+		- list of the same kind of information
+		- indexing always starts at zero.
+		- can have more than one dimension (2 dim array can also be matricies)
+
+			- 
+
+	- things in and out of loops..
+
+
+	- cluster data type
+		- group individual pieces of data together.
+
+
+
