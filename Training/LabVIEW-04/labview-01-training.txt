@@ -1,0 +1,262 @@
+Labview I / Digital Combinatorial Logic / Limit Switches, Digital outputs.
+--------------------------------------------------------------------------
+
+
+Properties of a programming language  (Mr S.)
+
+- Representing data 
+		LabVIEW - controls, indicators, function outputs.
+		text languages - named variables
+
+- Expressions
+		- labview - concatenated functions, equation window, c window,
+			python window
+		- text languages - arithmetic expressions
+
+- Assignments
+		- labview - wire from one function, control, indicator to
+			another
+		- text languages - =, memory copy, etc.
+
+- conditionals
+		- labview - case structure
+		- text languages - if/then/else, case
+
+- flow control (looping)
+		- labview - while loop, for loop
+		- text languages - while loop, until loop, for loop
+
+- subroutines
+		- labview - any VI (directly or by reference)
+		- text languages -  
+
+
+LabVIEW program building block -- the VI (virtual instrument)
+
+-- FOLLOW ALONG --
+
+(Mya or Zeke)
+
+- Open LabVIEW
+
+- Create a Blank VI
+
+- Save the VI file ---- Be VERY CAREFUL what directory you create the file in.
+
+- Two windows -- Front Panel (FP) and Block Diagram (BD)
+
+- Front Panel -- contains user interface.  (also used to contain interface when
+		used from other VIs.--- called as a SubVI)
+		
+		- contains buttons to run, continuosly run, stop, and pause execution
+
+		- this also shows the icon and connector pane --
+			- more about this next week.
+
+		- right click someplace on the block diagram.  The controls
+		(and indicatros ) palette is shown.
+
+		- controls are grouped in categories.  (numeric, boolean,
+		strings, arrays, etc.)
+
+		- place a numeric controls on the front panel.
+			Controls are the INPUTS from the user (or caller)
+			of this VI into the program.
+
+		- select the control -- move mouse, left click, control will display
+			differently when selected.
+		- copy the control a) use menu --> edit --> copy, or b) Ctrl-C
+
+		- paste a copy a) use menu --> edit --> paste, or b) ctrl-V
+
+		- move the controls a	round on the front panel.  Note that the
+			menu contains alignment and spacing helpers if needed.
+
+		- Rename each control.  "Input 1", "Input 2"
+
+		- select a control.   Copy and paste it.
+
+		- right click on the new control.  Select
+			- change to indicator.
+			There are a LOT of different things that can be done
+			when right clicking on one (or more) controls.
+
+		- Note that this looks different.  Indicators are OUTPUTS to the
+		user (or calling VI) that are calculated by the VI.
+
+		- Rename this indicator to "Output"
+
+		- Save VI...   Notice the "*" at the end of the file name in
+			the window title bar.  This indicates unsaved changes.
+
+		- Now switch to block diagram.   a) Menu WIndow -> show block
+			diagram or, b) ctrl-E
+
+	- block diagram (Mya or Zeke -- switch ??)
+
+		- This is where the code goes.
+
+		- notice that there are icons for the conttrols and indicators on the front panel
+
+		- the control and indicator icons can be moved.  moving them on the block diagram
+			does NOT move them on the front panel.
+
+		- normally (by convention -- code flows from left to right (controls on left, 
+			indicators on the right.)
+
+		- code is made up of controls, indicators, function blocks and the wires that
+			connect them.
+
+		- On a blank space on the block diagram, right click your mouse.  The function
+			pallete menu will be displayed.  
+
+		- To keep the function pallete visible, it can optionally be pinned.  In the upper
+			left corner of the pallete, click on the pin to pin the pallete.
+
+		- If you cant find a function but you know part of its name you can use search
+			in the upper left menu.
+
+		- When pinned, the pallete can be displayed differently if desired.  
+			THis is changed by thecustomize menu.   Generally -- Category (icons and text)
+			works best.  Alternately - icons and text -- might be desirable.
+
+		- THe pallete is organized in categories by function -- 
+			- "structures" contains programming elements.  We will use this a lot.
+			- "numeric" contains math and other items to use with numbers.
+			- "boolean" contains math and other items to use with boolean (on/off) values
+			- explore these on your own.  We will talk about the rest of these
+				more at later trainings.
+
+		- Lets have our program (VI) add the two inputs together and display the result.   
+
+			- open the numeric pallete.
+			- find the "add" function.  while hovering over the function, left click
+				the function to select it.   The cursor will change shape.
+				Move the mouse to place the selected function on the block
+				diagram.
+
+			- To see how to use a function, help is available.   Hover over the add
+				function.  Press Ctrl-H.  Help will be displayed.  (Ctrl-H is a 
+				toggle.  Press Ctrl-H again to turn off the help display.
+
+			- Note that inputs to the function are on the left and outputs are on the
+				right.
+
+			- Note that the "run arrow" in the upper left of the menu shows a broken
+				arrow.  This indicates that there is an error that needs to be
+				fixed before the VI can be executed.
+
+			- Left click on the broken arrow to show a window describing the errors.
+				Click on the particular error to highlight the function where
+				the error exists.
+
+			- Lets wire the first input icon to the first input on the add function.  
+				1) move mouse to input 1 icon.  The wire terminal is on the right.
+				move the mouse to the input 1 terminal.  The cursor will change shape
+				(to a wire spool) when it is in position.
+				2) Left click to start a wire.   Move the mouse.  This drags the wire.
+				3) To create a bend in the wire along the way, left click.  (One bend
+					is automatic, to make more than one bend, use the left click.)
+				4) Move the mouse to the top left input terminal on the "add" function.
+				when in position the terminals will be shown and the input name will be
+				displayed.
+				5) Finish the wire by left clicking.
+
+				Notice that the wire is a color.  The color indicates the data type
+				of the value.  More about this later.
+
+			- wire input 2 to the 2nd input of the add function.
+
+			- note that after the second input is wired, the broken run arrow changes to
+				a normal run arrow.
+
+			- wire the add output to the input of the output indicator.
+
+		- remember to save what you have done.
+
+		- lets run our program.   switvh to the front panel
+			- enter two numbers in the input boxes.
+
+			- press the run arrow.
+
+			- the VI runs once and displays the result.  
+
+			- If we type another value into the input nothing happens because the VI
+				is finished running.
+
+			- The circular arrow icon in the menu is "run continuously"   This will run
+				the program over and over again.  While this is  not how a normal VI
+				executes it allows for easier testing.   Lets try it.
+
+			- To stop execution, press the "stop" button.  This is to the right of the
+				run continuously button.  (It looks like a circular stop button.)
+
+		- lets add a second calculation to subtract 2 from "input 1".
+
+			- add a subtract block.
+
+			- wire from input 1 to the first input of the of the subtract blovk.  This wire
+				can start from ANY place along the existing wire connected to input 1.
+				Move the mouse until it changes shape.   Left click to start this new
+				wire segment.  Finish it just like the other wires we created.
+
+			- To create a constant, move the mouse to the second input of the subract function.
+				Right click to show the menu.  There are a lot of things in this menu.
+				Some of the important ones are "create constant", "create control",
+				"replace", but there are many others.   Click on the new constant and enter
+				the value 2.
+
+			- To create the new indicator, place the mouse on the output of the subtract function.
+				right click and select "create indicator".  Click on the indicator icon name
+				and change it to something meaningful.
+
+		- save your work.
+
+		- to create a comment, left click on a blank space on the block diagram.  An entry box will
+			appear.  Type your comment in this box.  
+
+		- things can be moved around the screen similar to many other windows applications.  Left
+			click on something and drag.  Draw a "rectangle" around a set of code and move.
+
+		- things can be deleted in the same way by selecting and pressing the delete key.
+
+		- Ctrl-Z is a VERY helpful "undo" key.
+
+		- SAVE code, go to front panel and test.
+
+		- IF THERE IS TIME HERE WE COULD SHOW THEM THE CASE STRUCTURE....  
+
+
+- Exercise #1 -- Mr S.  --- calculate feet/ticks for encoder.  inputs (wheel radius, encoder ticks/rotation)
+
+- Break
+
+- Combinatorial Digital Logic presentation -- Mr S.
+
+- Sample robot program for digital inputs and outputs, network table variables -- Mr. S.
+
+- Combinatorial digital exercise (Limit switches, digital outputs) -- Mr. S. -- Frisbee shooter..
+
+- Things you can do on your own.....  
+
+			
+
+			- 
+
+
+
+
+
+
+
+			 
+
+		
+
+		- 
+		
+
+		
+		
+
+		- 
